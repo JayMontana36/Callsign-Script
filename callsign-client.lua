@@ -46,7 +46,7 @@ local function FreezePlayer()
 	SetEntityCollision(ped, false)
 	FreezeEntityPosition(ped, true)
 	SetPlayerInvincible(player, true)
-end)
+end
 
 local function UnFreezePlayer()
 	player = PlayerId()
@@ -54,14 +54,14 @@ local function UnFreezePlayer()
 	SetEntityCollision(ped, true)
 	FreezeEntityPosition(ped, false)
 	SetPlayerInvincible(player, false)
-end)
+end
 
 local function SetPlateText()
 	vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 	if DoesEntityExist(vehicle) and GetPedInVehicleSeat(vehicle, -1) == GetPlayerPed(-1) then
 		SetVehicleNumberPlateText(vehicle, callsign)
 	end
-end)
+end
 
 Citizen.CreateThread(function()
     TriggerEvent("chat:addSuggestion", "/callsign", "Register your vehicle", {
